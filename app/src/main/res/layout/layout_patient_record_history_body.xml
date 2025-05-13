@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAnamnesa"
+                style="@style/StyleTextListFirstLineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/anamnesa"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAnamnesa"
+                style="@style/StyleTextListSecondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvPhysical"
+                style="@style/StyleTextListFirstLineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/physical_exam"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPhysicalExam"
+                style="@style/StyleTextListSecondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tvDiagnosa"
+                style="@style/StyleTextListFirstLineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnosa"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDiagnosa"
+                style="@style/StyleTextListSecondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tvTherapy"
+                style="@style/StyleTextListFirstLineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/therapy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTheraphy"
+                style="@style/StyleTextListSecondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/view3"
+                style="@style/StyleMarginTopList"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F1F0F0"
+                app:layout_constraintTop_toBottomOf="@+id/txtTheraphy" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_add_record"
+        android:title="Add Record"
+        android:icon="@drawable/ic_book_plus"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_edit"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="@string/edit" />
+    <item
+        android:id="@+id/menu_view"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="@string/view" />
+    <item
+        android:id="@+id/menu_archive"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="@string/archive" />
+    <item
+        android:id="@+id/menu_unarchive"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="@string/unarchive" />
+</menu>

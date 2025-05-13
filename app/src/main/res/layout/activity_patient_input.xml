@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_patient_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activities.patient.PatientInputActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layoutDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutBody">
+
+                <TextView
+                    android:id="@+id/tvNameDet"
+                    style="@style/StyleTextListFirstLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:id="@+id/tvAgeDet"
+                    style="@style/StyleTextListFirstLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age" />
+                <TextView
+                    android:id="@+id/tvPatientType"
+                    style="@style/StyleTextListFirstLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:text="@string/patient_type" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutPatientId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/patient_id"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtPatientId"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:minLines="1">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/first_name"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPatientId">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtFirstName"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="50">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutSurname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/surname"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutFirstName">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtSurname"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textCapWords"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="50">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutIdNumberInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/identification_number"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toStartOf="@+id/imgSatuSehatInput"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutSurname">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtIdNumberInput"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:minLines="1">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgSatuSehatInput"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="@dimen/global_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_satu_sehat_search_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/layoutIdNumberInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/layoutIdNumberInput"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/gender"
+                    android:paddingEnd="-15dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:endIconMode="dropdown_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutIdNumberInput">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinGender"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="30dp"
+                        android:imeOptions="flagNoExtractUi"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7.5dp"
+                    android:layout_marginStart="@dimen/global_margin"
+                    android:layout_marginTop="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/age"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutDateBirth">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtAge"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:maxLength="3"
+                        android:minLines="1"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:nextFocusForward="@+id/txtMonth">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/global_margin"
+                    android:layout_marginStart="7.5dp"
+                    android:layout_marginTop="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/month"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutDateBirth">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtMonth"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:maxLength="2"
+                        android:minLines="1">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutDateBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/date_of_birth"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutGender">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDateBirth"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:maxLines="1"
+                        android:minLines="1">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutpatientType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/patient_type"
+                    android:paddingEnd="-15dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:endIconMode="dropdown_menu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMonth">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinpatientType"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="30dp"
+                        android:imeOptions="flagNoExtractUi"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/description"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutpatientType"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDescription"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:minLines="1">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.skydoves.expandablelayout.ExpandableLayout
+                android:id="@+id/expandable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:expandable_animation="accelerate"
+                app:expandable_duration="200"
+                app:expandable_isExpanded="false"
+                app:expandable_parentLayout="@layout/layout_parent_title"
+                app:expandable_secondLayout="@layout/layout_profile_list"
+                app:expandable_spinner_animate="true"
+                app:expandable_spinner_color="@color/black_smooth"
+                app:expandable_spinner_gravity="end"
+                app:expandable_spinner_size="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutDetail" />
+
+<!--            <com.skydoves.expandablelayout.ExpandableLayout-->
+<!--                android:id="@+id/expandableRecord"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:expandable_animation="accelerate"-->
+<!--                app:expandable_duration="200"-->
+<!--                app:expandable_isExpanded="false"-->
+<!--                app:expandable_parentLayout="@layout/layout_parent_title"-->
+<!--                app:expandable_secondLayout="@layout/layout_record_history_list"-->
+<!--                app:expandable_spinner_animate="true"-->
+<!--                app:expandable_spinner_color="@color/black_smooth"-->
+<!--                app:expandable_spinner_gravity="end"-->
+<!--                app:expandable_spinner_size="50dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/expandable"-->
+<!--                app:layout_constraintVertical_bias="0.0" />-->
+
+            <LinearLayout
+                android:id="@+id/layoutHisoryMedical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/expandable"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/tvTitleRecord"
+                    style="@style/StyleTextMediumLargeBoldWithoutMargin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/global_margin"
+                    android:text="@string/medical_records" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvLoad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        style="@style/style_button_ok"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        style="@style/style_button_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

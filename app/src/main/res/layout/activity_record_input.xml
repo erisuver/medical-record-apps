@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".activities.record.RecordInputActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutRecordDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/record_date"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtRecordDate"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:minLines="1">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutWorkLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/work_location"
+                android:paddingEnd="-15dp"
+                app:boxBackgroundColor="@color/white"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutRecordDate">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinLocation"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="30dp"
+                    android:inputType="none"
+                    android:imeOptions="flagNoExtractUi"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--            <TextView-->
+<!--                android:id="@+id/tvLocation"-->
+<!--                style="@style/StyleTextEditspin"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/global_margin"-->
+<!--                android:text="@string/work_location"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/layoutRecordDate" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                android:id="@+id/spinLocation"-->
+<!--                style="@style/Widget.AppCompat.Spinner.Underlined"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:spinnerMode="dropdown"-->
+<!--                android:theme="@style/Spinner"-->
+<!--                android:layout_marginStart="@dimen/global_margin"-->
+<!--                android:layout_marginEnd="@dimen/global_margin"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tvLocation" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutPatient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/patient"
+                app:boxBackgroundColor="@color/white"
+                app:errorTextColor="@color/red"
+                app:layout_constraintEnd_toStartOf="@+id/btnAddPatient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutWorkLocation">
+
+                <AutoCompleteTextView
+                    android:id="@+id/txtPatient"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="30dp"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ProgressBar
+                android:id="@+id/loadingText"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="end|top"
+                app:layout_constraintBottom_toBottomOf="@+id/layoutPatient"
+                app:layout_constraintEnd_toEndOf="@+id/layoutPatient"
+                app:layout_constraintTop_toTopOf="@+id/layoutPatient" />
+
+            <ImageButton
+                android:id="@+id/btnAddPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_btn_plus_2"
+                style="@style/btn_lov_style"
+                app:layout_constraintBottom_toBottomOf="@+id/layoutPatient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutPatient"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutpatientType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/patient_type"
+                android:paddingEnd="-15dp"
+                app:boxBackgroundColor="@color/white"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPatient">
+
+                <AutoCompleteTextView
+                    android:id="@+id/spinpatientType"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="30dp"
+                    android:inputType="none"
+                    android:imeOptions="flagNoExtractUi"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutAnamnesa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/anamnesa"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/btnAnamnesa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutpatientType">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtAnamnesa"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="4">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/btnAnamnesa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+                style="@style/btn_lov_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutAnamnesa"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutPhysicalExam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/physical_exam"
+                app:boxBackgroundColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/btnPhysicalExam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutAnamnesa">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPhysicalExam"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="4">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/btnDiagnosa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+                style="@style/btn_lov_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutDiagnosa"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPhysical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/btnPhysicalExam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPhysicalExam">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/weight"
+                    android:paddingEnd="-12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:suffixText="@string/kilogram"
+                    app:suffixTextAppearance="@style/StyleTextUnit"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtWeight"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="5"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:nextFocusForward="@+id/txtTemperature"
+                        android:digits="0123456789.,">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutSystolic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/systolic"
+                    android:paddingEnd="-12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:suffixText="@string/heart_rate"
+                    app:suffixTextAppearance="@style/StyleTextUnit"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutWeight">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtSystolic"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="3"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:nextFocusForward="@+id/txtDiastolic">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutTemperature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/temperature"
+                    android:paddingEnd="-12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:errorTextColor="@color/red"
+                    app:suffixText="@string/celcius"
+                    app:suffixTextAppearance="@style/StyleTextUnit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtTemperature"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="5"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:nextFocusForward="@+id/txtSystolic"
+                        android:digits="0123456789.,">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutDiastolic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/global_margin"
+                    android:background="@color/white"
+                    android:hint="@string/diastolic"
+                    android:paddingEnd="-12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:suffixText="@string/heart_rate"
+                    app:suffixTextAppearance="@style/StyleTextUnit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutTemperature">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDiastolic"
+                        style="@style/StyleTextEditGeneral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:maxLength="3"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:nextFocusForward="@+id/txtDiagnosa">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    style="@style/StyleTextLargeWithoutMargin"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/global_margin"
+                    android:text="/"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutDiastolic"
+                    app:layout_constraintStart_toEndOf="@+id/layoutSystolic"
+                    app:layout_constraintTop_toTopOf="@+id/layoutSystolic" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutDiagnosa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/diagnosa"
+                app:boxBackgroundColor="@color/white"
+                app:endIconMode="custom"
+                app:layout_constraintEnd_toStartOf="@+id/btnPhysicalExam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPhysical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDiagnosa"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="4">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/btnPhysicalExam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+                style="@style/btn_lov_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutPhysicalExam"/>
+
+            <TextView
+                android:id="@+id/tvIcd"
+                style="@style/StyleTextEditspinMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/icd"
+                app:layout_constraintEnd_toStartOf="@+id/btnIcd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutDiagnosa" />
+
+            <ImageButton
+                android:id="@+id/btnIcd"
+                style="@style/btn_lov_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/global_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvIcd"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvIcd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIcd" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTheraphy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@color/white"
+                android:hint="@string/therapy"
+                app:boxBackgroundColor="@color/white"
+                app:endIconMode="custom"
+                app:layout_constraintEnd_toStartOf="@+id/btnPhysicalExam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcvIcd">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTheraphy"
+                    style="@style/StyleTextEditGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="4">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/btnTheraphy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24"
+                style="@style/btn_lov_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutTheraphy"/>
+
+            <TextView
+                android:id="@+id/tvPrescriptionFile"
+                style="@style/StyleTextEditspinMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/prescription_file"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutTheraphy" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="195dp"
+                android:layout_height="195dp"
+                android:layout_marginTop="@dimen/global_margin"
+                android:background="@drawable/defaultimg"
+                app:layout_constraintStart_toStartOf="@+id/tvPrescriptionFile"
+                app:layout_constraintTop_toBottomOf="@id/tvPrescriptionFile" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPicture"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@drawable/ic_baseline_photo_camera_24"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/imgPicture"
+                app:layout_constraintStart_toEndOf="@+id/imgPicture" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDelete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="@dimen/global_margin"
+                android:background="@drawable/ic_delete"
+                android:backgroundTint="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/btnPicture"
+                app:layout_constraintStart_toEndOf="@+id/imgPicture" />
+
+            <TextView
+                android:id="@+id/tvFiles"
+                style="@style/StyleTextEditspinMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:text="@string/files"
+                app:layout_constraintEnd_toStartOf="@+id/btnFiles"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgPicture" />
+
+            <ImageButton
+                android:id="@+id/btnFiles"
+                style="@style/btn_lov_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/global_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvFiles"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvFiles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvFiles"
+                app:layout_constraintTop_toBottomOf="@+id/tvFiles" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutBilling"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnBilling"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcvFiles">
+
+                <TextView
+                    android:id="@+id/tvBillingtotal"
+                    style="@style/StyleTextEditspin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billing_total"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBillingRp"
+                    style="@style/StyleTextEditspinMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBillingtotal" />
+
+                <TextView
+                    android:id="@+id/txtBilling"
+                    style="@style/StyleTextEditspinMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvBillingRp"
+                    app:layout_constraintTop_toTopOf="@+id/tvBillingRp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/btnBilling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_margin"
+                app:srcCompat="@drawable/ic_edit_check"
+                style="@style/btn_lov_style"
+                app:layout_constraintBottom_toBottomOf="@+id/layoutBilling"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layoutBilling" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/style_button_ok"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        style="@style/style_button_cancel"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

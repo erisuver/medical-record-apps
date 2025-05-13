@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgIcon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_margin"
+                        android:background="@drawable/ic_baseline_cloud_upload_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/settingBackup"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/settingBackup" />
+
+                    <TextView
+                        android:id="@+id/settingBackup"
+                        style="@style/StyleTextMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:text="@string/setting_backup"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imgIcon3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtSet"
+                        style="@style/StyleTextListFirstLine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:text="@string/include_image_and_file"
+                        app:layout_constraintBottom_toBottomOf="@+id/swcFile"
+                        app:layout_constraintEnd_toStartOf="@+id/swcFile"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/swcFile" />
+
+                    <Switch
+                        android:id="@+id/swcFile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:checked="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                    <View
+                        android:id="@+id/view1"
+                        style="@style/StyleMarginTopList"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/global_margin"
+                        android:background="#F1F0F0"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSet" />
+
+
+                    <TextView
+                        android:id="@+id/tvAtention"
+                        style="@style/StyleTextListFirstLine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/global_margin"
+                        android:layout_marginStart="@dimen/global_margin"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/master_device"
+                        app:layout_constraintEnd_toStartOf="@+id/imgInfo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/settingBackup" />
+
+                    <Switch
+                        android:id="@+id/swcMaster"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:checked="false"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvAtention"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvAtention"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <ImageView
+                        android:id="@+id/imgInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_question"
+                        android:backgroundTint="@color/pasienqu_blue"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvAtention"
+                        app:layout_constraintEnd_toStartOf="@+id/swcMaster"
+                        app:layout_constraintTop_toTopOf="@+id/tvAtention" />
+
+
+                    <TextView
+                        android:id="@+id/tvInfo"
+                        style="@style/StyleTextListSecondLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:text="@string/information_master_device"
+                        android:visibility="visible"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAtention" />
+
+
+                    <View
+                        android:id="@+id/view2"
+                        style="@style/StyleMarginTopList"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/global_margin"
+                        android:layout_marginTop="56dp"
+                        android:background="#F1F0F0"
+                        app:layout_constraintTop_toBottomOf="@+id/tvInfo"
+                        tools:layout_editor_absoluteX="-13dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnLogin"
+                        style="@style/style_button_ok"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:text="@string/login"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        android:id="@+id/txtUser"
+                        style="@style/StyleTextListSecondLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:text="@string/logged_as"
+                        android:textColor="@color/pasienqu_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="@dimen/global_margin"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="@dimen/global_margin"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgIcon2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/global_margin"
+                            android:background="@drawable/ic_baseline_notifications_active_24"
+                            app:layout_constraintBottom_toBottomOf="@+id/setting"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/setting" />
+
+                        <TextView
+                            android:id="@+id/setting"
+                            style="@style/StyleTextMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/global_margin"
+                            android:text="@string/title_setting_reminder"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imgIcon2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        style="@style/StyleTextListSecondLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/global_margin"
+                        android:layout_marginTop="@dimen/global_margin"
+                        android:layout_marginEnd="@dimen/global_margin"
+                        android:text="@string/notice_set_remind_backup" />
+
+                    <RadioGroup
+                        android:id="@+id/rgReminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/global_margin"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb1"
+                            style="@style/StyleTextListFirstLineWithoutMargin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_1day" />
+
+                        <RadioButton
+                            android:id="@+id/rb3"
+                            style="@style/StyleTextListFirstLineWithoutMargin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_3day" />
+
+                        <RadioButton
+                            android:id="@+id/rb7"
+                            style="@style/StyleTextListFirstLineWithoutMargin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_7day" />
+
+                        <RadioButton
+                            android:id="@+id/rb30"
+                            style="@style/StyleTextListFirstLineWithoutMargin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_30day" />
+
+                        <RadioButton
+                            android:id="@+id/rbNever"
+                            style="@style/StyleTextListFirstLineWithoutMargin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_never" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpload"
+        style="@style/style_button_ok"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_300"
+        android:enabled="false"
+        android:text="@string/upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDownload"
+        style="@style/style_button_ok"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/restore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

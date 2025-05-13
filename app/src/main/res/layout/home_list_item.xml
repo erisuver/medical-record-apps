@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/crdView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtThisMonth"
+            style="@style/StyleTextList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/btnAction"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+
+        <TextView
+            android:id="@+id/txtTotal"
+            style="@style/StyleTextList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/txtTitleTotal"
+            app:layout_constraintEnd_toStartOf="@+id/btnAction"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <TextView
+            android:id="@+id/TextView2"
+            style="@style/StyleTextList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/this_month"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleTotal" />
+
+        <TextView
+            android:id="@+id/txtTitleTotal"
+            style="@style/StyleTextList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/StyleTextListFirstLineBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Notes"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <View
+            android:id="@+id/view3"
+            style="@style/StyleMarginTopList"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F0F0"
+            app:layout_constraintTop_toBottomOf="@+id/txtThisMonth" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAction"
+            style="@style/style_floating_button_Without_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:backgroundTint="@color/pasienqu_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_btn_plus_2"
+            android:layout_marginRight="@dimen/global_margin"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+        <item name="colorPrimary">@color/pasienqu_blue</item>
+        <item name="colorAccent">@color/pasienqu_blue</item>
+        <item name="android:colorPrimaryDark">@color/pasienqu_blue</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="titleTextColor">@color/black</item>
+        <item name="searchViewStyle">@style/Widget.AppCompat.Light.SearchView</item>
+        <item name="textAppearanceButton">@style/TextAppearance.App.Button</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="actionBarStyle">@style/Custom.ActionBar</item>
+
+<!--        <item name="tabStyle">@style/Widget.MaterialComponents.TabLayout.Colored</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
+    <style name="Custom.ActionBar" parent="Widget.MaterialComponents.Light.ActionBar.Solid">
+        <item name="background">@color/white</item>
+    </style>
+
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/red</item>
+        <item name="titleTextStyle">@style/MyActionBarTitle</item>
+    </style>
+
+    <style name="MyActionBarTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+
+    <dimen name="global_margin">15dp</dimen>
+
+
+    <style name="style_font">
+        <item name="android:fontFamily">@font/lato</item>
+    </style>
+
+    <style name="TextAppearance.App.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/lato_thin</item>
+        <item name="android:fontFamily">@font/lato_thin</item>
+    </style>
+
+
+
+    <style name="style_button_ok" parent="android:style/Widget.Button">
+        <item name="android:background">@color/pasienqu_blue</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+        
+    </style>
+
+    <style name="style_button_cancel" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/style_btn_border</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/pasienqu_blue</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
+    <style name="style_button_default" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="textAllCaps">false</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">@dimen/global_margin</item>
+
+
+    </style>
+
+    <style name="style_button_more" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/ic_baseline_more_horiz_24</item>
+        <item name="android:backgroundTint">@color/pasienqu_blue</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+
+    </style>
+
+    <style name="style_floating_button_Without_margin" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/style_btn</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:tint">@android:color/white</item>
+        <item name="android:backgroundTint">@color/pasienqu_blue</item>
+        <item name="tint">@color/white</item>
+    </style>
+
+    <style name="style_floating_button" parent="style_floating_button_Without_margin">
+        <item name="android:layout_margin">@dimen/global_margin</item>
+    </style>
+
+    <style name="style_button_with_margin_top" parent="style_button_ok">
+        <item name="android:layout_marginTop">8dp</item>
+        
+    </style>
+
+    <style name="style_button_ok_with_margin" parent="style_button_ok">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="style_button_cancel_with_margin" parent="style_button_cancel">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        
+    </style>
+
+    <style name="StyleCardMenu" parent="CardView">
+        
+    </style>
+
+    <style name="StyleCardMenuWithoutRadius" parent="CardView">
+        
+    </style>
+
+    <style name="StyleSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="cornerRadius">0dp</item>
+        
+    </style>
+
+
+    <style name="StyleTextTab" parent="style_font">
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="StyleTextSmall" parent="style_font">
+        <item name="android:textSize">7pt</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">#979797</item>
+    </style>
+
+    <style name="StyleTextSmallNoMargin" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+    <style name="StyleTextSmallBlack" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+    <style name="StyleTextSmallWhite" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StyleTextParent" parent="style_font">
+        <item name="android:textSize">12pt</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:background">#e0e0e0</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:padding">12dp</item>
+        
+    </style>
+
+    <style name="StyleTextSmallList" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textColor">@color/black</item>
+        
+    </style>
+
+    <style name="StyleTextSmallListWithoutMargin" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="StyleTextUnit" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#B1B1B1</item>
+    </style>
+
+    <style name="StyleTextBlack" parent="style_font">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+
+    <style name="StyleTextList" parent="style_font">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextListWithoutMargin" parent="style_font">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextListFirstLineWithoutMargin" parent="style_font">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextListFirstLine" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextListFirstLineMedium" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextListSecondLine" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="StyleTextListSecondLineSmall" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="StyleTextListSecondLineMedium" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="StyleTextFirstLineSmooth" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+    <style name="StyleTextFirstLineSmoothMedium" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+    <style name="StyleTextFirstLiniear" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginStart">@dimen/global_margin</item>
+        <item name="android:layout_marginEnd">@dimen/global_margin</item>
+    </style>
+
+    <style name="StyleTextFirstLiniearBold" parent="StyleTextListFirstLineWithoutMargin">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginStart">@dimen/global_margin</item>
+        <item name="android:layout_marginEnd">@dimen/global_margin</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StyleTextListFirstLineBold" parent="StyleTextListFirstLine">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="StyleTextMediumWithoutMargin" parent="style_font">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_smooth</item>
+    </style>
+
+    <style name="StyleTextLargeWithoutMargin" parent="style_font">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextMediumBlueWithoutMargin" parent="style_font">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/pasienqu_blue</item>
+    </style>
+
+    <style name="StyleTextMediumWhiteWithoutMargin" parent="style_font">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StyleTextMedium" parent="StyleTextMediumWithoutMargin">
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginLeft">@dimen/global_margin</item>
+        <item name="android:layout_marginRight">@dimen/global_margin</item>
+    </style>
+
+    <style name="StyleTextMediumWhite" parent="StyleTextMediumWhiteWithoutMargin">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="StyleTextMediumLarge" parent="style_font">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextMediumLargeWithoutMargin" parent="style_font">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextWhiteMediumLarge" parent="style_font">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StyleTextMediumBoldWithoutMargin" parent="style_font">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextMediumLargeBoldWithoutMargin" parent="style_font">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleTextLargeWhite" parent="style_font">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StyleMarginTop" parent="style_font">
+        <item name="android:layout_marginTop">12dp</item>
+        
+    </style>
+    <style name="StyleMarginTopList" parent="style_font">
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        
+    </style>
+
+    <style name="StyleAppBar" parent="style_font">
+        <item name="android:backgroundTint">@android:color/white</item>
+        
+    </style>
+
+    <style name="StyleTextEdit" parent="style_font">
+        <item name="android:textSize">10pt</item>
+        <item name="android:layout_marginTop">-4dp</item>
+        <item name="android:backgroundTint">#a9a9a9</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:textColor">#222222</item>
+        
+    </style>
+    <style name="StyleTextEditNumber" parent="StyleTextEdit">
+        <item name="android:ems">8</item>
+        <item name="android:minEms">8</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:inputType">numberDecimal</item>
+        
+    </style>
+    <style name="StyleTextEditLogin" parent="style_font">
+        <item name="android:textSize">8pt</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:backgroundTint">#B1B1B1</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:selectAllOnFocus">true</item>
+        
+    </style>
+
+    <style name="StyleTextEditGeneral" parent="style_font">
+        <item name="android:textSize">8pt</item>
+        <item name="android:layout_marginTop">-8dp</item>
+<!--        <item name="android:paddingBottom">5dp</item>-->
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/white</item>
+
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:paddingTop">35dp</item>
+    </style>
+
+    <style name="StyleCheckbox" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">@dimen/global_margin</item>
+        <item name="android:layout_marginEnd">@dimen/global_margin</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:backgroundTint">#B1B1B1</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:selectAllOnFocus">true</item>
+    </style>
+
+
+    <style name="StyleTextEditspin" parent="style_font">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:backgroundTint">#B1B1B1</item>
+        <item name="android:selectAllOnFocus">true</item>
+
+    </style>
+
+    <style name="StyleTextEditspinMedium" parent="style_font">
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:backgroundTint">#B1B1B1</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+    <style name="SpinnerStyleUnderline" parent="Widget.AppCompat.Spinner.Underlined">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/lato</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlayExtended" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        
+    </style>
+    <style name="StyleSpinner">
+        <item name="android:textSize">11pt</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:backgroundTint">#B1B1B1</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        
+    </style>
+
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyle2">
+        <item name="android:textColor">@color/green</item>
+        
+    </style>
+
+
+
+    <style name="floatingAdd">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundColor">@color/pasienqu_blue</item>
+        <item name="android:foreground">@color/white</item>
+    </style>
+
+    <style name="btn_lov_style">
+        <item name="android:background">@drawable/style_btn_border</item>
+        <item name="android:minWidth">35dp</item>
+        <item name="android:minHeight">35dp</item>
+        <item name="android:tint">@color/pasienqu_blue</item>
+
+        <item name="android:selectable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="btn_default_style">
+        <item name="android:background">@drawable/style_btn_border</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+
+        <item name="android:selectable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="style_error_singleLine">
+        <item name="android:textViewStyle">@style/SingleLineEllipsized</item>
+    </style>
+
+    <style name="SingleLineEllipsized">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+    <style name="margin_linear" parent="@style/StyleTextListSecondLine">
+<!--        <item name="android:layout_marginTop">10dp</item>-->
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <style name="TitleCollapsed" parent="style_font">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TitleExpanded" parent="style_font">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="style_counter_text" >
+        <item name="android:layout_margin">50dp</item>
+    </style>
+
+    <style name="MyGravity" parent="android:Theme.Material.Dialog" />
+
+    <style name="style_button_border_blue" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/style_btn_border_line</item>
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/pasienqu_blue</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>

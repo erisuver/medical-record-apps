@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_sky"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Status -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleTextMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="Status" />
+
+                <Spinner
+                    android:id="@+id/spinStatus"
+                    style="@style/StyleTextMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/shape_filter_text"
+                    android:gravity="start" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- Periode -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleTextMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/periode" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4.1"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txtRecordFrom"
+                        style="@style/StyleTextMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_filter_text"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:text="2023/01/01" />
+
+                    <TextView
+                        style="@style/StyleTextMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="0"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/txtRecordTo"
+                        style="@style/StyleTextMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_filter_text"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:text="2023/01/01" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!-- No. Order -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/StyleTextMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/location" />
+
+
+                <Spinner
+                    android:id="@+id/spinLocation"
+                    style="@style/StyleTextMedium"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/shape_filter_text"
+                    android:gravity="start" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvLoad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!--    Footer-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_sky"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnKirim"
+            style="@style/style_button_border_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/global_margin"
+            android:text="@string/send_to_satu_sehat" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
